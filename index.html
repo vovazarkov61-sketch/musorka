@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мусор Бекабада: Проблемы и Решения</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        ecoDark: '#0B1912',
+                        ecoCard: '#13281E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1912;
+            color: #E2E8F0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-panel {
+            background: rgba(19, 40, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(34, 197, 94, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-ecoDark text-slate-200 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Фоновый сетчатый узор -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-40"></div>
+
+    <!-- Шапка / Авторы -->
+    <header class="relative z-10 border-b border-emerald-900/40 bg-ecoDark/80 backdrop-blur-md sticky top-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg text-white block leading-tight">Экологический проект</span>
+                    <span class="text-xs text-slate-400">г. Бекабад</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-slate-300 bg-emerald-950/60 px-4 py-2 rounded-full border border-emerald-800/40">
+                <span class="text-slate-400">Авторы проекта:</span>
+                <span class="font-semibold text-emerald-400">Жарков Владимир</span>
+                <span class="text-slate-600">•</span>
+                <span class="font-semibold text-emerald-400">Жарков Фёдор</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- Главная секция (Hero) -->
+        <section class="min-h-[80vh] flex items-center justify-center px-6 py-20 border-b border-emerald-950/50">
+            <div class="max-w-4xl mx-auto text-center fade-in-section">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Презентация исследовательского проекта
+                </div>
+                
+                <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Проблема мусора в Бекабаде:<br>
+                    <span class="text-gradient">Анализ и Пути Решения</span>
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
+                    Наш город — наш дом. Как промышленный центр Узбекистана сталкивается с бытовыми и промышленными отходами, и что мы можем сделать для сохранения чистоты Бекабада уже сегодня.
+                </p>
+
+                <div class="pt-6 border-t border-slate-800/80 max-w-md mx-auto flex justify-around text-center text-sm">
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-400 font-display">100+ тыс.</div>
+                        <div class="text-slate-400 text-xs">жителей города</div>
+                    </div>
+                    <div class="w-px bg-slate-800"></div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-400 font-display">2 Ключевых</div>
+                        <div class="text-slate-400 text-xs">источника отходов</div>
+                    </div>
+                    <div class="w-px bg-slate-800"></div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-400 font-display">4 Шага</div>
+                        <div class="text-slate-400 text-xs">к решению</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Текущая ситуация (Фото 1 и Фото 2) -->
+        <section class="py-20 px-6 border-b border-emerald-950/50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-display text-3xl font-bold text-white mb-4">Актуальность проблемы в Бекабаде</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Бекабад — крупный индустриальный узел. Сочетание промышленной нагрузки и бытового мусора требует особого внимания со стороны жителей и экологических служб.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Карточка 1 с ФОТО 1 -->
+                    <div class="glass-panel overflow-hidden rounded-2xl fade-in-section flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="photo1.jpg" alt="Проблема мусора" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ecoCard via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-4 grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display text-xl font-bold text-white mb-3">Рост бытовых отходов</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    С ростом населения и потребления пластиковой упаковки объем мусора в жилых районах Бекабада стремительно увеличивается. Несанкционированные свалки у дворов ухудшают санитарное состояние.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2 с ФОТО 2 -->
+                    <div class="glass-panel overflow-hidden rounded-2xl fade-in-section flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="photo2.jpg" alt="Промышленная специфика" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ecoCard via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-4 grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display text-xl font-bold text-white mb-3">Промышленная специфика</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Наличие крупного металлургического завода и цементных производств требует раздельного подхода к бытовым и строительно-промышленным отходам для предотвращения загрязнения почвы и реки Сырдарья.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Главные причины накопившихся проблем -->
+        <section class="py-20 px-6 border-b border-emerald-950/50 bg-emerald-950/20">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-display text-3xl font-bold text-white mb-4">Основные источники загрязнения</h2>
+                    <p class="text-slate-400">Почему скопление мусора становится системной проблемой</p>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="glass-panel p-6 rounded-xl fade-in-section">
+                        <div class="text-emerald-400 font-display text-3xl font-bold mb-3">01</div>
+                        <h4 class="font-bold text-white mb-2">Недостаток баков</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">В некоторых махаллях наблюдается нехватка контейнеров для сбора мусора или их несвоевременный вывоз.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-xl fade-in-section">
+                        <div class="text-emerald-400 font-display text-3xl font-bold mb-3">02</div>
+                        <h4 class="font-bold text-white mb-2">Культура утилизации</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Отсутствие привычки раздельного сбора пластика, стекла и бумаги среди населения увеличивает общие объемы свалок.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-xl fade-in-section">
+                        <div class="text-emerald-400 font-display text-3xl font-bold mb-3">03</div>
+                        <h4 class="font-bold text-white mb-2">Пластиковый бум</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Использование одноразовых пакетов и ПЭТ-бутылок, которые разлагаются сотни лет и разнятся ветром по городу.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея / Решения с ФОТО 3 и ФОТО 4 -->
+        <section class="py-20 px-6 border-b border-emerald-950/50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-display text-3xl font-bold text-white mb-4">План борьбы и Пути Решения</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Практические шаги, которые изменят экологическую ситуацию в городе к лучшему</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- ФОТО 3 -->
+                    <div class="glass-panel overflow-hidden rounded-2xl fade-in-section">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="photo3.jpg" alt="Раздельный сбор" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ecoCard via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg text-white mb-2">1. Раздельный сбор и сортировка</h3>
+                            <p class="text-sm text-slate-300">Установка контейнеров для пластика, бумаги и стекла в махаллях Бекабада позволит отправлять сырьё на вторичную переработку.</p>
+                        </div>
+                    </div>
+
+                    <!-- ФОТО 4 -->
+                    <div class="glass-panel overflow-hidden rounded-2xl fade-in-section">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="photo4.jpg" alt="Субботники и чистый город" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-ecoCard via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg text-white mb-2">2. Эко-инициативы и субботники</h3>
+                            <p class="text-sm text-slate-300">Проведение уборок в школах, парках и вдоль русла реки Сырдарья при участии жителей и молодежи города.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="glass-panel p-5 rounded-xl flex items-center gap-4 fade-in-section">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center shrink-0">3</div>
+                        <p class="text-sm text-slate-300"><strong class="text-white">Экологическое просвещение:</strong> Уроки экологии в школах Бекабада для формирования привычки не мусорить.</p>
+                    </div>
+                    <div class="glass-panel p-5 rounded-xl flex items-center gap-4 fade-in-section">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 font-bold flex items-center justify-center shrink-0">4</div>
+                        <p class="text-sm text-slate-300"><strong class="text-white">Контроль и штрафы:</strong> Установка камер и усиление контроля за несанкционированным выбросом строительного мусора.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Простые действия для каждого человека -->
+        <section class="py-20 px-6 border-b border-emerald-950/50 bg-emerald-950/20">
+            <div class="max-w-4xl mx-auto text-center fade-in-section">
+                <h2 class="font-display text-3xl font-bold text-white mb-6">Что может сделать каждый из нас прямо сейчас?</h2>
+                
+                <div class="grid sm:grid-cols-2 gap-6 text-left mt-10">
+                    <div class="p-6 rounded-2xl bg-ecoDark/80 border border-emerald-900/60 flex items-start gap-4">
+                        <div class="text-emerald-400 pt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Использовать эко-сумки</h4>
+                            <p class="text-xs text-slate-400">Заменить одноразовые полиэтиленовые пакеты на многоразовую тканевую сумку при походах на базар или в магазин.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-ecoDark/80 border border-emerald-900/60 flex items-start gap-4">
+                        <div class="text-emerald-400 pt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Меньше одноразового пластика</h4>
+                            <p class="text-xs text-slate-400">Пользоваться многоразовыми бутылками для воды вместо ежедневной покупки новых ПЭТ-бутылок.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-ecoDark/80 border border-emerald-900/60 flex items-start gap-4">
+                        <div class="text-emerald-400 pt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Участие в субботниках</h4>
+                            <p class="text-xs text-slate-400">Поддерживать чистоту в своем дворе и участвовать в общественных акциях по благоустройству Бекабада.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-ecoDark/80 border border-emerald-900/60 flex items-start gap-4">
+                        <div class="text-emerald-400 pt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Личный пример</h4>
+                            <p class="text-xs text-slate-400">Никогда не выбрасывать мусор мимо урны и приучать к чистоте друзей, близких и младших.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Заключение -->
+        <section class="py-24 px-6 text-center">
+            <div class="max-w-3xl mx-auto fade-in-section">
+                <div class="w-16 h-16 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center mx-auto mb-6 border border-brand-500/30">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                </div>
+                <h2 class="font-display text-3xl font-bold text-white mb-4">Бекабад — чистый город будущего</h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    Чистота города начинается с каждого из нас. Соблюдая простые правила утилизации и заботясь об окружающей среде, мы сможем сделать Бекабад зеленым, ухоженным и красивым домом для будущих поколений.
+                </p>
+                <p class="text-sm text-emerald-400 font-semibold tracking-wide uppercase">
+                    Спасибо за внимание!
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал / Футер -->
+    <footer class="border-t border-emerald-950/80 bg-black/40 py-8 px-6 relative z-10 text-center text-sm text-slate-500">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                Школьный презентационный проект • г. Бекабад
+            </div>
+            <div>
+                Авторы: <span class="text-slate-300 font-medium">Жарков Владимир</span>, <span class="text-slate-300 font-medium">Жарков Фёдор</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт плавного появления блоков при прокрутке -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
